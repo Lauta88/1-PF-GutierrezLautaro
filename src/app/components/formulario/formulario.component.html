@@ -1,0 +1,39 @@
+<nav>
+  <h4 class=>Agregar Alumno</h4>
+
+  <form [formGroup]="form" (ngSubmit)="enviarAlumno()" >
+  <mat-form-field  appearance="fill">
+    <mat-label>Nombre</mat-label>
+    <input  formControlName="nombre" autocomplete="off" matInput p>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Apellido</mat-label>
+    <input  formControlName="apellido"  autocomplete="off" matInput>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Edad</mat-label>
+    <input type="number" formControlName="edad"  autocomplete="off" matInput>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Curso</mat-label>
+    <input  formControlName="curso"  autocomplete="off" matInput>
+  </mat-form-field>
+
+
+  <mat-form-field appearance="fill">
+    <mat-label>Inicio del curso</mat-label>
+    <input matInput [matDatepicker]="picker"  formControlName="inicioDeCurso"  autocomplete="off" >
+    <mat-hint>MM/DD/YYYY</mat-hint>
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+  <br>
+  <button [disabled]="form.invalid" type="submit" mat-raised-button color="primary">Agregar</button>
+  </form>
+</nav>
+
+
+
